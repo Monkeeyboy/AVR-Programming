@@ -13,13 +13,13 @@ int main(void) {
 
   // -------- Inits --------- //
   uint8_t i=0;
-  LED_DDR = 0xff;               /* Data Direction Register B:
+  LED_DDR = 0x3f;               /* Data Direction Register B:
                                    all set up for output */
 
   // ------ Event loop ------ //
   while (1) {
 
-    while (i < 7) {
+    while (i < 5) {
       LED_PORT = (1 << i);                 /* illuminate only i'th pin */
       _delay_ms(DELAYTIME);                                    /* wait */
       i = i + 1;                               /* move to the next LED */
